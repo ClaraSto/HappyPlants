@@ -1,18 +1,16 @@
-#include <Arduino.h>
-
-// put function declarations here:
-int myFunction(int, int);
+#include  <Arduino.h>
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  pinMode(2, OUTPUT);  // Set GPIO2 as output (onboard LED on NodeMCU)
+  Serial.begin(115200);  // Start serial communication
+  Serial.println("LED Blink Test started");
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  digitalWrite(2, HIGH);  // Turn the LED on
+  Serial.println("LED ON");
+  delay(1000);             // Wait for 1 second
+  digitalWrite(2, LOW);   // Turn the LED off
+  Serial.println("LED OFF");
+  delay(1000);             // Wait for 1 second
 }
