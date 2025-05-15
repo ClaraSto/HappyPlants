@@ -1,0 +1,17 @@
+//update Pi mit den Befehl
+sudo apt upgrade && sudo apt dist-upgrade
+
+//installiere BROKER
+sudo apt install mosquitto
+
+//setze mosquitto service auf autostart
+sudo systemctl enable mosquitto.service
+
+//starte broker
+sudo mosquitto -d
+
+//mosquitto client installieren
+sudo apt install mosquitto-clients
+
+//subsciption einrichten
+mosquitto_sub -h <strong>IP-VOM-BROKER</strong>-d -q 2 -t /#
