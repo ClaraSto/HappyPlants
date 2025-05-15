@@ -80,7 +80,7 @@ bool reconnectMqtt() {
 void measureData() {
   sensorData = analogRead(34);
   // Plausibilitätscheck
-  if(sensorData < 100 || sensorData > 4095) {
+  if(sensorData < 100 || sensorData > 1000) {
     Serial.println("Invalid sensor reading!");
     sensorData = -1;
   }
